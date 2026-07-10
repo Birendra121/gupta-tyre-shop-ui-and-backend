@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+
+  <title>Product Management | Gupta Tyre Shop</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <link rel="stylesheet"
+        th:href="@{/css/style.css}">
+
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+  <!-- Sidebar -->
+
+  <div th:replace="~{fragments/admin-sidebar :: sidebar}"></div>
+
+  <!-- Main Content -->
+
+  <div class="admin-content">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+      <div>
+
+        <h2 class="fw-bold">
+
+          <i class="bi bi-box-seam text-primary"></i>
+
+          Product Management
+
+        </h2>
+
+        <p class="text-muted">
+
+          Add or update tyre products.
+
+        </p>
+
+      </div>
+
+      <a th:href="@{/admin/products}"
+         class="btn btn-secondary">
+
+        <i class="bi bi-arrow-left-circle"></i>
+
+        Back
+
+      </a>
+
+    </div>
+
+    <!-- Error -->
+
+    <div class="alert alert-danger"
+         th:if="${error}"
+         th:text="${error}">
+    </div>
+
+    <!-- ===========================
+         PRODUCT INFORMATION
+    ============================ -->
+
+    <form th:action="@{/admin/products/save}"
+          th:object="${product}"
+          method="post"
+          enctype="multipart/form-data">
+
+      <input type="hidden"
+             th:field="*{id}">
+
+      <div class="card shadow mb-4">
+
+        <div class="card-header bg-primary text-white">
+
+          <h5 class="mb-0">
+
+            Product Information
+
+          </h5>
+
+        </div>
+
+        <div class="card-body">
+
+          <!-- Product Name -->
+
+          <div class="mb-3">
+
+            <label class="form-label fw-semibold">
+
+              Product Name
+
+            </label>
+
+            <input type="text"
+                   class="form-control"
+                   th:field="*{name}"
+                   placeholder="Enter Product Name">
+
+          </div>
+
+          <!-- Brand & Category -->
+
+          <div class="row">
+
+            <div class="col-md-6 mb-3">
+
+              <label class="form-label fw-semibold">
+
+                Brand
+
+              </label>
+
+              <select class="form-select"
+                      th:field="*{brandId}">
+
+                <option value="">
+
+                  Select Brand
+
+                </option>
+
+                <option th:each="brand : ${brands}"
+                        th:value="${brand.id}"
+                        th:text="${brand.name}">
+                </option>
+
+              </select>
+
+            </div>
+
+            <div class="col-md-6 mb-3">
+
+              <label class="form-label fw-semibold">
+
+                Category
+
+              </label>
+
+              <select class="form-select"
+                      th:field="*{categoryId}">
+
+                <option value="">
+
+                  Select Category
+
+                </option>
+
+                <option th:each="category : ${categories}"
+                        th:value="${category.id}"
+                        th:text="${category.name}">
+                </option>
+
+              </select>
+
+            </div>
+
+          </div>
+
+          <!-- Short Description -->
+
+          <div class="mb-3">
+
+            <label class="form-label fw-semibold">
+
+              Short Description
+
+            </label>
+
+            <textarea class="form-control"
+                      rows="3"
+                      th:field="*{shortDescription}"
+                      placeholder="Enter Short Description">
+                        </textarea>
+
+          </div>
+
+          <!-- Full Description -->
+
+          <div class="mb-3">
+
+            <label class="form-label fw-semibold">
+
+              Product Description
+
+            </label>
+
+            <textarea class="form-control"
+                      rows="6"
+                      th:field="*{description}"
+                      placeholder="Enter Complete Product Description">
+                        </textarea>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ===========================
+     PRICING & INVENTORY
+=========================== -->
+
+      <div class="card shadow mb-4">
+
+        <div class="card-header bg-success text-white">
+
+          <h5 class="mb-0">
+
+            Pricing & Inventory
+
+          </h5>
+
+        </div>
+
+        <div class="card-body">
+
+          <div class="row">
+
+            <!-- MRP -->
+
+            <div class="col-md-4 mb-3">
+
+              <label class="form-label fw-semibold">
+
+                MRP (₹)
+
+              </label>
+
+              <input type="number"
+                     id="mrp"
+                     step="0.01"
+                     class="form-control"
+                     th:field="*{mrp}"
+                     onkeyup="calculateDiscount()">
+
+            </div>
+
+            <!-- Selling Price -->
+
+            <div class="col-md-4 mb-3">
+
+              <label class="form-label fw-semibold">
+
+                Selling Price (₹)
+
+              </label>
+
+              <input type="number"
+                     id="sellingPrice"
+                     step="0.01"
+                     class="form-control"
+                     th:field="*{sellingPrice}"
+                     onkeyup="calculateDiscount()">
+
+            </div>
+
+            <!-- Discount -->
+
+            <div class="col-md-4 mb-3">
+
+              <label class="form-label fw-semibold">
+
+                Discount %
+
+              </label>
+
+              <input type="number"
+                     id="discountPercentage"
+                     class="form-control"
+                     th:field="*{discountPercentage}"
+                     readonly>
+
+            </div>
+
+          </div>
+
+          <div class="row">
+
+            <!-- Stock -->
+
+            <div class="col-md-6 mb-3">
+
+              <label class="form-label fw-semibold">
+
+                Stock Quantity
+
+              </label>
+
+              <input type="number"
+                     class="form-control"
+                     th:field="*{stockQuantity}"
+                     placeholder="Enter Available Stock">
+
+            </div>
+
+            <!-- SKU -->
+
+            <div class="col-md-6 mb-3">
+
+              <label class="form-label fw-semibold">
+
+                SKU Code
+
+              </label>
+
+              <input type="text"
+                     class="form-control"
+                     th:field="*{sku}"
+                     placeholder="Example : MRF-CT-001">
+
+              <small class="text-muted">
+
+                SKU should be unique for every product.
+
+              </small>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ===========================
+     PRODUCT IMAGE
+=========================== -->
+
+      <div class="card shadow mb-4">
+
+        <div class="card-header bg-warning">
+
+          <h5 class="mb-0">
+
+            Product Image
+
+          </h5>
+
+        </div>
+
+        <div class="card-body">
+
+          <div class="row">
+
+            <!-- Image Upload -->
+
+            <div class="col-lg-6">
+
+              <label class="form-label fw-semibold">
+
+                Upload Product Image
+
+              </label>
+
+              <input type="file"
+                     class="form-control"
+                     name="imageFile"
+                     accept=".png,.jpg,.jpeg,.webp"
+                     onchange="previewImage(event)">
+
+              <small class="text-muted">
+
+                Supported formats:
+                PNG, JPG, JPEG, WEBP
+
+              </small>
+
+            </div>
+
+            <!-- Image Preview -->
+
+            <div class="col-lg-6 text-center">
+
+              <label class="form-label fw-semibold">
+
+                Image Preview
+
+              </label>
+
+              <br>
+
+              <!-- Existing Image -->
+
+              <img th:if="${product.image!=null}"
+                   th:src="@{'/uploads/products/' + ${product.image}}"
+                   id="preview"
+                   class="img-thumbnail"
+                   style="width:220px;
+                            height:180px;
+                            object-fit:contain;">
+
+              <!-- Default Preview -->
+
+              <img th:if="${product.image==null}"
+                   id="preview"
+                   src="https://placehold.co/220x180?text=No+Image"
+                   class="img-thumbnail"
+                   style="width:220px;
+                            height:180px;
+                            object-fit:contain;">
+
+            </div>
+
+          </div>
+
+          <hr>
+
+          <div class="row mt-3">
+
+            <!-- Featured -->
+
+            <div class="col-md-6">
+
+              <div class="form-check form-switch">
+
+                <input class="form-check-input"
+                       type="checkbox"
+                       th:field="*{featured}">
+
+                <label class="form-check-label">
+
+                  Featured Product
+
+                </label>
+
+              </div>
+
+            </div>
+
+            <!-- Active -->
+
+            <div class="col-md-6">
+
+              <div class="form-check form-switch">
+
+                <input class="form-check-input"
+                       type="checkbox"
+                       th:field="*{active}">
+
+                <label class="form-check-label">
+
+                  Active Product
+
+                </label>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ===========================
+           BUTTONS
+      =========================== -->
+
+      <div class="d-flex justify-content-end gap-2 mb-5">
+
+        <a th:href="@{/admin/products}"
+           class="btn btn-secondary btn-lg">
+
+          <i class="bi bi-arrow-left-circle"></i>
+
+          Cancel
+
+        </a>
+
+        <button type="submit"
+                class="btn btn-success btn-lg">
+
+          <i class="bi bi-check-circle-fill"></i>
+
+          <span th:if="${product.id==null}">
+
+            Save Product
+
+        </span>
+
+          <span th:if="${product.id!=null}">
+
+            Update Product
+
+        </span>
+
+        </button>
+
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+  function previewImage(event){
+
+      const preview =
+          document.getElementById("preview");
+
+      preview.src =
+          URL.createObjectURL(event.target.files[0]);
+
+  }
+
+  function calculateDiscount(){
+
+      let mrp =
+          parseFloat(document.getElementById("mrp").value) || 0;
+
+      let selling =
+          parseFloat(document.getElementById("sellingPrice").value) || 0;
+
+      if(mrp > 0){
+
+          let discount =
+              ((mrp - selling) / mrp) * 100;
+
+          document.getElementById("discountPercentage").value =
+              discount.toFixed(0);
+
+      }else{
+
+          document.getElementById("discountPercentage").value = "";
+
+      }
+
+  }
+
+</script>
+
+</body>
+
+</html>

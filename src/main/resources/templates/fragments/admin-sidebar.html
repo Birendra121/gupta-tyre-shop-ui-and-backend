@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+<div th:fragment="sidebar">
+
+    <div class="admin-sidebar">
+
+        <h3 class="logo">
+
+            Gupta Tyre
+
+        </h3>
+
+        <ul>
+
+            <li>
+
+                <a th:href="@{/admin/dashboard}">
+
+                    <i class="bi bi-speedometer2"></i>
+
+                    Dashboard
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a th:href="@{/admin/categories}">
+
+                    <i class="bi bi-grid-fill"></i>
+
+                    Categories
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a th:href="@{/admin/brands}">
+
+                    <i class="bi bi-award"></i>
+
+                    Brands
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a th:href="@{/admin/products}">
+
+                    <i class="bi bi-disc"></i>
+
+                    Products
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a th:href="@{/admin/accessories}">
+
+                    <i class="bi bi-car-front"></i>
+
+                    Accessories
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a th:href="@{/admin/services}">
+
+                    <i class="bi bi-tools"></i>
+
+                    Services
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a th:href="@{/admin/messages}">
+
+                    <i class="bi bi-envelope"></i>
+
+                    Messages
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a th:href="@{/logout}">
+
+                    <i class="bi bi-box-arrow-right"></i>
+
+                    Logout
+
+                </a>
+
+            </li>
+
+        </ul>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

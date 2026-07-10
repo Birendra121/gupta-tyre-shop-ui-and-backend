@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+<div th:fragment="search(actionUrl)">
+
+  <form class="row mb-4"
+        method="get"
+        th:action="${actionUrl}">
+
+    <div class="col-md-10">
+
+      <input class="form-control"
+             name="keyword"
+             placeholder="Search...">
+
+    </div>
+
+    <div class="col-md-2">
+
+      <button class="btn btn-primary w-100">
+
+        Search
+
+      </button>
+
+    </div>
+
+  </form>
+
+</div>
+
+</body>
+
+</html>
