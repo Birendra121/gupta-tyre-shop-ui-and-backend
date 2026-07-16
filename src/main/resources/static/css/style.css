@@ -1027,3 +1027,522 @@ margin-bottom:20px;
     color:#6c757d;
 
 }
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero{
+
+    padding:90px 0;
+
+    background:linear-gradient(135deg,#f8f9fa,#ffffff);
+
+}
+
+.hero-image{
+
+    max-height:420px;
+
+    object-fit:cover;
+
+}
+
+.hero-btn{
+
+    padding:12px 30px;
+
+    border-radius:30px;
+
+    font-weight:600;
+
+}
+
+/* =====================================
+   HERO SECTION
+===================================== */
+
+.hero{
+
+    padding:90px 0;
+
+    background:linear-gradient(135deg,#f8f9fa,#ffffff);
+
+}
+
+.hero-image{
+
+    max-height:430px;
+
+    object-fit:cover;
+
+}
+
+.hero-btn{
+
+    padding:12px 28px;
+
+    border-radius:30px;
+
+    font-weight:600;
+
+}
+
+/* =====================================
+   TRUSTED BRANDS
+===================================== */
+
+.brand-box{
+
+    background:#ffffff;
+
+    padding:25px;
+
+    border-radius:15px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+    height:180px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.brand-box:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.brand-box img{
+
+    max-height:70px;
+
+    object-fit:contain;
+
+}
+
+/* =====================================
+   SERVICES
+===================================== */
+
+.services-section{
+
+    background:#ffffff;
+
+}
+
+.service-card{
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    padding:35px 25px;
+
+    text-align:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+    height:100%;
+
+}
+
+.service-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.15);
+
+}
+
+.service-icon{
+
+    width:90px;
+
+    height:90px;
+
+    margin:auto;
+
+    margin-bottom:20px;
+
+    border-radius:50%;
+
+    background:#ffc107;
+
+    color:#212529;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:38px;
+
+}
+
+.service-card h4{
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+.service-card p{
+
+    color:#6c757d;
+
+    line-height:1.7;
+
+}
+
+/*=========================================================
+                FEATURED PRODUCTS
+=========================================================*/
+
+.featured-products{
+
+    background:#f8f9fa;
+
+}
+
+.product-card{
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:0 12px 28px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+    height:100%;
+
+}
+
+.product-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.15);
+
+}
+
+.product-image{
+
+    height:230px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#ffffff;
+
+    padding:20px;
+
+}
+
+.product-image img{
+
+    max-height:180px;
+
+    object-fit:contain;
+
+}
+
+.product-body{
+
+    padding:25px;
+
+}
+
+.btn-product{
+
+    width:100%;
+
+    height:45px;
+
+    border-radius:10px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:8px;
+
+}
+
+/*=========================================================
+                WHY CHOOSE US
+=========================================================*/
+
+.why-us{
+
+    background:#ffffff;
+
+}
+
+.feature-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:35px 25px;
+
+    text-align:center;
+
+    transition:.35s;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    height:100%;
+
+}
+
+.feature-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.15);
+
+}
+
+.feature-icon{
+
+    width:85px;
+
+    height:85px;
+
+    margin:auto;
+
+    margin-bottom:20px;
+
+    background:#ffc107;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:36px;
+
+    color:#212529;
+
+}
+
+.feature-card h5{
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+.feature-card p{
+
+    color:#6c757d;
+
+    line-height:1.7;
+
+}
+/*=========================================================
+                BUSINESS STATISTICS
+=========================================================*/
+
+.statistics-section{
+
+    background:#f8f9fa;
+
+}
+
+.stats-card{
+
+    background:#ffffff;
+
+    padding:40px 20px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+    height:100%;
+
+}
+
+.stats-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+
+}
+
+.stats-card h2{
+
+    font-size:40px;
+
+    font-weight:700;
+
+    color:#212529;
+
+}
+
+.stats-card p{
+
+    color:#6c757d;
+
+    margin-bottom:0;
+
+}
+
+/*=========================================================
+                TESTIMONIALS
+=========================================================*/
+
+.testimonial-card{
+
+    background:#fff;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+    height:100%;
+
+}
+
+.testimonial-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+/*=========================================================
+                CONTACT
+=========================================================*/
+
+.contact-card{
+
+    background:#ffffff;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+}
+
+.contact-item{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-bottom:25px;
+
+}
+
+.contact-item i{
+
+    font-size:28px;
+
+    color:#ffc107;
+
+}
+
+/*=========================================================
+                WHATSAPP
+=========================================================*/
+
+.whatsapp-float{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    background:#25D366;
+
+    color:#fff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:30px;
+
+    text-decoration:none;
+
+    z-index:999;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+}
+
+/*=========================================================
+                SCROLL TOP
+=========================================================*/
+
+.scroll-top{
+
+    position:fixed;
+
+    bottom:100px;
+
+    right:25px;
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#ffc107;
+
+    font-size:22px;
+
+    display:none;
+
+    z-index:999;
+
+}

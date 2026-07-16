@@ -27,10 +27,26 @@ public class ContactMessageServiceImpl implements ContactMessageService{
 
         repository.save(message);
 
-        try{
+        /*try{
             emailService.sendContactEmail(dto);
         }catch (Exception e){
                 e.printStackTrace();
+        }*/
+
+        try {
+
+            emailService.sendContactEmail(dto);
+
+            System.out.println("✅ Email sent successfully.");
+
+        } catch (Exception e) {
+
+            System.err.println("❌ Email sending failed");
+
+            e.printStackTrace();
+
+            throw new RuntimeException(e);
+
         }
 
     }

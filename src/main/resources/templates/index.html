@@ -1,11 +1,7 @@
 <!DOCTYPE html>
-
-<html
-        xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
     <meta charset="UTF-8">
 
@@ -17,15 +13,25 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
           rel="stylesheet">
 
-    <link
-            rel="stylesheet"
-            th:href="@{/css/style.css}">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet"
+          th:href="@{/css/style.css}">
 
 </head>
 
 <body>
 
+<!-- ======================
+        NAVBAR
+======================= -->
+
 <div th:replace="~{fragments/navbar :: navbar}"></div>
+
+<!-- ======================
+        HERO
+======================= -->
 
 <section class="hero">
 
@@ -33,10 +39,14 @@
 
         <div class="row align-items-center">
 
+            <!-- Left -->
+
             <div class="col-lg-6">
 
                 <span class="badge bg-warning text-dark fs-6 mb-3">
+
                     Trusted Since 2010
+
                 </span>
 
                 <h1 class="display-3 fw-bold">
@@ -52,27 +62,36 @@
                 <p class="lead mt-4">
 
                     We provide premium tyres,
+
                     wheel alignment,
-                    balancing,
-                    accessories,
-                    battery replacement
-                    and complete car care solutions.
+
+                    wheel balancing,
+
+                    nitrogen filling,
+
+                    battery replacement,
+
+                    engine oil change,
+
+                    car wash
+
+                    and complete automobile care.
 
                 </p>
 
                 <div class="mt-4">
 
-                    <a href="#"
-                       class="btn btn-warning btn-lg me-3">
+                    <a th:href="@{/products}"
+                       class="btn btn-warning hero-btn me-3">
 
                         Explore Products
 
                     </a>
 
-                    <a href="#"
-                       class="btn btn-outline-dark btn-lg">
+                    <a th:href="@{/contact}"
+                       class="btn btn-outline-dark hero-btn">
 
-                        Book Service
+                        Contact Us
 
                     </a>
 
@@ -80,28 +99,14 @@
 
             </div>
 
-            <div class="col-lg-6">
-<!--
-                <div class="hero-placeholder">
+            <!-- Right -->
 
-                    <i class="bi bi-car-front-fill display-1"></i>
+            <div class="col-lg-6 text-center">
 
-                    <h3 class="mt-3">
-
-                        Hero Image
-
-                    </h3>-->
-
-                <div class="col-lg-6 text-center">
-
-                    <img
-                            src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=1200"
-                            class="hero-image img-fluid shadow-lg rounded-4"
-                            alt="Premium Tyres">
-
-                </div>
-
-                </div>
+                <img
+                        src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=1200"
+                        class="hero-image img-fluid shadow-lg rounded-4"
+                        alt="Premium Tyres">
 
             </div>
 
@@ -110,52 +115,121 @@
     </div>
 
 </section>
+
+
+<!-- ===========================
+     TRUSTED BRANDS
+=========================== -->
 
 <section class="py-5 bg-light">
 
     <div class="container">
 
-        <h2 class="text-center fw-bold mb-5">
+        <div class="text-center mb-5">
 
-            Trusted Brands
+            <span class="text-warning fw-bold">
 
-        </h2>
+                TRUSTED BRANDS
 
-        <div class="row text-center">
+            </span>
 
-            <div class="col">
+            <h2 class="display-5 fw-bold mt-2">
 
-                <div class="brand-box">MRF</div>
+                We Deal With India's Top Tyre Brands
+
+            </h2>
+
+            <p class="text-muted">
+
+                We supply genuine tyres from leading national and international manufacturers.
+
+            </p>
+
+        </div>
+
+        <div class="row g-4 text-center">
+
+            <div class="col-lg-2 col-md-4 col-6">
+
+                <div class="brand-box">
+
+                    <img src="/images/brands/mrf.png"
+                         class="img-fluid mb-3"
+                         alt="MRF">
+
+                    <h6>MRF</h6>
+
+                </div>
 
             </div>
 
-            <div class="col">
+            <div class="col-lg-2 col-md-4 col-6">
 
-                <div class="brand-box">CEAT</div>
+                <div class="brand-box">
 
-            </div>
+                    <img src="/images/brands/apollo.png"
+                         class="img-fluid mb-3"
+                         alt="Apollo">
 
-            <div class="col">
+                    <h6>Apollo</h6>
 
-                <div class="brand-box">Apollo</div>
-
-            </div>
-
-            <div class="col">
-
-                <div class="brand-box">Michelin</div>
+                </div>
 
             </div>
 
-            <div class="col">
+            <div class="col-lg-2 col-md-4 col-6">
 
-                <div class="brand-box">JK</div>
+                <div class="brand-box">
+
+                    <img src="/images/brands/ceat.png"
+                         class="img-fluid mb-3"
+                         alt="CEAT">
+
+                    <h6>CEAT</h6>
+
+                </div>
 
             </div>
 
-            <div class="col">
+            <div class="col-lg-2 col-md-4 col-6">
 
-                <div class="brand-box">Goodyear</div>
+                <div class="brand-box">
+
+                    <img src="/images/brands/michelin.png"
+                         class="img-fluid mb-3"
+                         alt="Michelin">
+
+                    <h6>Michelin</h6>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-6">
+
+                <div class="brand-box">
+
+                    <img src="/images/brands/jk.png"
+                         class="img-fluid mb-3"
+                         alt="JK Tyre">
+
+                    <h6>JK Tyre</h6>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-6">
+
+                <div class="brand-box">
+
+                    <img src="/images/brands/goodyear.png"
+                         class="img-fluid mb-3"
+                         alt="Goodyear">
+
+                    <h6>Goodyear</h6>
+
+                </div>
 
             </div>
 
@@ -165,135 +239,193 @@
 
 </section>
 
-<section class="services-section">
+<!-- =====================================
+        OUR SERVICES
+====================================== -->
+
+<section class="services-section py-5">
 
     <div class="container">
 
         <div class="text-center mb-5">
 
-            <span class="text-warning fw-bold">OUR SERVICES</span>
+            <span class="text-warning fw-bold">
+
+                OUR SERVICES
+
+            </span>
 
             <h2 class="display-5 fw-bold mt-2">
+
                 Complete Tyre & Car Care Solutions
+
             </h2>
 
             <p class="text-muted">
-                We provide premium tyre sales, wheel services and professional
-                automobile maintenance for all types of vehicles.
+
+                From premium tyres to complete car care,
+                we provide everything your vehicle needs under one roof.
+
             </p>
 
         </div>
 
         <div class="row g-4">
 
+            <!-- Premium Tyres -->
+
             <div class="col-lg-4 col-md-6">
 
                 <div class="service-card">
 
                     <div class="service-icon">
+
                         <i class="bi bi-disc"></i>
+
                     </div>
 
                     <h4>Premium Tyres</h4>
 
                     <p>
-                        Genuine tyres from trusted brands like
-                        MRF, Apollo, CEAT, Michelin and more.
+
+                        Genuine tyres from MRF,
+                        Apollo,
+                        CEAT,
+                        Michelin,
+                        JK Tyre,
+                        Bridgestone,
+                        Goodyear and Yokohama.
+
                     </p>
 
                 </div>
 
             </div>
 
+            <!-- Wheel Alignment -->
+
             <div class="col-lg-4 col-md-6">
 
                 <div class="service-card">
 
                     <div class="service-icon">
-                        <i class="bi bi-tools"></i>
+
+                        <i class="bi bi-bullseye"></i>
+
                     </div>
 
                     <h4>Wheel Alignment</h4>
 
                     <p>
-                        Computerized wheel alignment for a smooth and safe driving
-                        experience.
+
+                        Computerized wheel alignment for
+                        better handling,
+                        safety and longer tyre life.
+
                     </p>
 
                 </div>
 
             </div>
 
+            <!-- Wheel Balancing -->
+
             <div class="col-lg-4 col-md-6">
 
                 <div class="service-card">
 
                     <div class="service-icon">
+
                         <i class="bi bi-gear-wide-connected"></i>
+
                     </div>
 
                     <h4>Wheel Balancing</h4>
 
                     <p>
-                        Eliminate steering vibrations and improve tyre life with
-                        accurate balancing.
+
+                        Eliminate steering vibration
+                        and improve driving comfort
+                        with precision balancing.
+
                     </p>
 
                 </div>
 
             </div>
 
+            <!-- Nitrogen Filling -->
+
             <div class="col-lg-4 col-md-6">
 
                 <div class="service-card">
 
                     <div class="service-icon">
-                        <i class="bi bi-car-front"></i>
+
+                        <i class="bi bi-droplet-half"></i>
+
                     </div>
 
-                    <h4>Car Accessories</h4>
+                    <h4>Nitrogen Filling</h4>
 
                     <p>
-                        Premium accessories to enhance your vehicle's comfort,
-                        safety and appearance.
+
+                        Improve tyre life,
+                        maintain pressure
+                        and increase fuel efficiency.
+
                     </p>
 
                 </div>
 
             </div>
 
+            <!-- Engine Oil -->
+
             <div class="col-lg-4 col-md-6">
 
                 <div class="service-card">
 
                     <div class="service-icon">
-                        <i class="bi bi-droplet-half"></i>
+
+                        <i class="bi bi-fuel-pump-fill"></i>
+
                     </div>
 
                     <h4>Engine Oil Change</h4>
 
                     <p>
-                        High-quality engine oil replacement to keep your engine
-                        running efficiently.
+
+                        Premium engine oils
+                        with professional replacement
+                        service.
+
                     </p>
 
                 </div>
 
             </div>
+
+            <!-- Battery -->
 
             <div class="col-lg-4 col-md-6">
 
                 <div class="service-card">
 
                     <div class="service-icon">
+
                         <i class="bi bi-battery-charging"></i>
+
                     </div>
 
                     <h4>Battery Replacement</h4>
 
                     <p>
-                        Genuine batteries with professional installation and
-                        warranty support.
+
+                        Genuine batteries
+                        with installation
+                        and warranty support.
+
                     </p>
 
                 </div>
@@ -307,175 +439,137 @@
 </section>
 
 
-<!-- ===========================
-     Featured Tyres
-=========================== -->
+<!-- ===================================================== -->
+<!--                 FEATURED PRODUCTS START               -->
+<!--      Data Source : MySQL (products table)            -->
+<!--      Controller  : HomeController                    -->
+<!--      Model       : featuredProducts                  -->
+<!-- ===================================================== -->
 
-<section class="featured-products py-5">
+<section class="featured-products py-5 bg-light">
 
     <div class="container">
+
+        <!-- Section Heading -->
 
         <div class="text-center mb-5">
 
             <span class="text-warning fw-bold">
+
                 FEATURED PRODUCTS
+
             </span>
 
             <h2 class="display-5 fw-bold mt-2">
-                Our Premium Tyres
+
+                Best Selling Tyres
+
             </h2>
 
             <p class="text-muted">
-                Choose from our wide range of premium tyres for every vehicle.
+
+                Explore our most popular tyres from leading brands.
+
             </p>
 
         </div>
 
+        <!-- Product Cards -->
+
         <div class="row g-4">
 
-            <!-- Product 1 -->
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-3 col-md-6"
 
-                <div class="product-card">
+                 th:each="product : ${featuredProducts}">
 
-                    <div class="product-image">
+                <div class="product-card h-100">
 
-                        <i class="bi bi-disc"></i>
-
-                    </div>
-
-                    <div class="product-body">
-
-                        <span class="badge bg-warning text-dark mb-2">
-                            MRF
-                        </span>
-
-                        <h5>ZLX Premium</h5>
-
-                        <p class="text-muted">
-                            Size : 195/65 R15
-                        </p>
-
-                        <h4 class="text-primary">
-                            ₹4,999
-                        </h4>
-
-                        <a href="#" class="btn btn-warning w-100 mt-3">
-                            View Details
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <!-- Product 2 -->
-
-            <div class="col-lg-3 col-md-6">
-
-                <div class="product-card">
+                    <!-- Product Image -->
 
                     <div class="product-image">
 
-                        <i class="bi bi-disc"></i>
+                        <img
+
+                                th:if="${product.image!=null}"
+
+                                th:src="@{'/uploads/products/'+${product.image}}"
+
+                                class="img-fluid"
+
+                                alt="Product Image">
+
+                        <i class="bi bi-image display-1"
+
+                           th:if="${product.image==null}">
+
+                        </i>
 
                     </div>
+
+                    <!-- Product Details -->
 
                     <div class="product-body">
 
-                        <span class="badge bg-warning text-dark mb-2">
-                            Apollo
+                        <!-- Brand -->
+
+                        <span
+
+                                class="badge bg-warning text-dark mb-2"
+
+                                th:text="${product.brand.name}">
+
                         </span>
 
-                        <h5>Alnac 4G</h5>
+                        <!-- Product Name -->
 
-                        <p class="text-muted">
-                            Size : 205/55 R16
+                        <h5
+
+                                th:text="${product.name}">
+
+                        </h5>
+
+                        <!-- Category -->
+
+                        <p class="text-muted"
+
+                           th:text="${product.category.name}">
+
                         </p>
 
-                        <h4 class="text-primary">
-                            ₹5,499
-                        </h4>
+                        <!-- Price -->
 
-                        <a href="#" class="btn btn-warning w-100 mt-3">
+                        <div class="mb-3">
+
+                            <span class="text-decoration-line-through text-secondary"
+
+                                  th:if="${product.mrp!=null}">
+
+                                ₹ <span th:text="${product.mrp}"></span>
+
+                            </span>
+
+                            <br>
+
+                            <span class="fs-4 fw-bold text-primary">
+
+                                ₹ <span th:text="${product.sellingPrice}"></span>
+
+                            </span>
+
+                        </div>
+
+                        <!-- View Details -->
+
+                        <a
+
+                                th:href="@{'/products/'+${product.id}}"
+
+                                class="btn btn-warning btn-product">
+
+                            <i class="bi bi-eye"></i>
+
                             View Details
-                        </a>
 
-                    </div>
-
-                </div>
-
-            </div>
-
-            <!-- Product 3 -->
-
-            <div class="col-lg-3 col-md-6">
-
-                <div class="product-card">
-
-                    <div class="product-image">
-
-                        <i class="bi bi-disc"></i>
-
-                    </div>
-
-                    <div class="product-body">
-
-                        <span class="badge bg-warning text-dark mb-2">
-                            CEAT
-                        </span>
-
-                        <h5>SecuraDrive</h5>
-
-                        <p class="text-muted">
-                            Size : 185/65 R15
-                        </p>
-
-                        <h4 class="text-primary">
-                            ₹4,699
-                        </h4>
-
-                        <a href="#" class="btn btn-warning w-100 mt-3">
-                            View Details
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <!-- Product 4 -->
-
-            <div class="col-lg-3 col-md-6">
-
-                <div class="product-card">
-
-                    <div class="product-image">
-
-                        <i class="bi bi-disc"></i>
-
-                    </div>
-
-                    <div class="product-body">
-
-                        <span class="badge bg-warning text-dark mb-2">
-                            Michelin
-                        </span>
-
-                        <h5>Primacy 4</h5>
-
-                        <p class="text-muted">
-                            Size : 215/60 R16
-                        </p>
-
-                        <h4 class="text-primary">
-                            ₹6,999
-                        </h4>
-
-                        <a href="#" class="btn btn-warning w-100 mt-3">
-                            View Details
                         </a>
 
                     </div>
@@ -490,34 +584,71 @@
 
 </section>
 
-<section class="container py-5">
+<!-- ===================================================== -->
+<!--                 FEATURED PRODUCTS END                 -->
+<!-- ===================================================== -->
 
-    <h2 class="text-center fw-bold mb-5">
+<!-- ===================================================== -->
+<!--            WHY CHOOSE GUPTA TYRE SHOP START           -->
+<!-- ===================================================== -->
 
-        Why Choose Gupta Tyre Shop
+<section class="why-us py-5">
 
-    </h2>
+    <div class="container">
 
-    <div class="row">
+        <!-- ========================= -->
+        <!-- Section Heading -->
+        <!-- ========================= -->
 
-        <div class="col-md-4">
+        <div class="text-center mb-5">
 
-            <div class="card h-100 shadow">
+            <span class="text-warning fw-bold">
 
-                <div class="card-body text-center">
+                WHY CHOOSE US
 
-                    <i class="bi bi-award display-4 text-warning"></i>
+            </span>
 
-                    <h4 class="mt-3">
+            <h2 class="display-5 fw-bold mt-2">
+
+                Your Trusted Partner For Every Journey
+
+            </h2>
+
+            <p class="text-muted">
+
+                Quality products, experienced technicians and customer-first service.
+
+            </p>
+
+        </div>
+
+        <!-- ========================= -->
+        <!-- Feature Cards -->
+        <!-- ========================= -->
+
+        <div class="row g-4">
+
+            <!-- Genuine Products -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+
+                        <i class="bi bi-patch-check-fill"></i>
+
+                    </div>
+
+                    <h5>
 
                         Genuine Products
 
-                    </h4>
+                    </h5>
 
                     <p>
 
-                        100% genuine tyres
-                        from leading brands.
+                        100% original tyres, batteries and accessories from trusted brands.
 
                     </p>
 
@@ -525,26 +656,27 @@
 
             </div>
 
-        </div>
+            <!-- Expert Technicians -->
 
-        <div class="col-md-4">
+            <div class="col-lg-3 col-md-6">
 
-            <div class="card h-100 shadow">
+                <div class="feature-card">
 
-                <div class="card-body text-center">
+                    <div class="feature-icon">
 
-                    <i class="bi bi-tools display-4 text-warning"></i>
+                        <i class="bi bi-person-workspace"></i>
 
-                    <h4 class="mt-3">
+                    </div>
 
-                        Expert Mechanics
+                    <h5>
 
-                    </h4>
+                        Expert Technicians
+
+                    </h5>
 
                     <p>
 
-                        Certified technicians
-                        with years of experience.
+                        Skilled professionals providing accurate fitting and servicing.
 
                     </p>
 
@@ -552,26 +684,55 @@
 
             </div>
 
-        </div>
+            <!-- Affordable Pricing -->
 
-        <div class="col-md-4">
+            <div class="col-lg-3 col-md-6">
 
-            <div class="card h-100 shadow">
+                <div class="feature-card">
 
-                <div class="card-body text-center">
+                    <div class="feature-icon">
 
-                    <i class="bi bi-headset display-4 text-warning"></i>
+                        <i class="bi bi-currency-rupee"></i>
 
-                    <h4 class="mt-3">
+                    </div>
+
+                    <h5>
+
+                        Best Prices
+
+                    </h5>
+
+                    <p>
+
+                        Competitive pricing with complete transparency and no hidden charges.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Customer Support -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+
+                        <i class="bi bi-headset"></i>
+
+                    </div>
+
+                    <h5>
 
                         Customer Support
 
-                    </h4>
+                    </h5>
 
                     <p>
 
-                        Quick support
-                        and trusted service.
+                        Friendly support before and after every purchase.
 
                     </p>
 
@@ -585,41 +746,137 @@
 
 </section>
 
-<section class="stats">
+<!-- ===================================================== -->
+<!--            WHY CHOOSE GUPTA TYRE SHOP END             -->
+<!-- ===================================================== -->
+
+<!-- ===================================================== -->
+<!--             BUSINESS STATISTICS START                 -->
+<!-- ===================================================== -->
+
+<section class="statistics-section py-5">
 
     <div class="container">
 
-        <div class="row text-center">
+        <!-- Section Heading -->
 
-            <div class="col-md-3">
+        <div class="text-center mb-5">
 
-                <h1>15+</h1>
+            <span class="text-warning fw-bold">
 
-                <p>Years Experience</p>
+                OUR ACHIEVEMENTS
+
+            </span>
+
+            <h2 class="display-5 fw-bold mt-2">
+
+                Trusted By Thousands Of Customers
+
+            </h2>
+
+            <p class="text-muted">
+
+                We believe in quality service and customer satisfaction.
+
+            </p>
+
+        </div>
+
+        <div class="row text-center g-4">
+
+            <!-- Years -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="stats-card">
+
+                    <i class="bi bi-calendar-check display-4 text-warning"></i>
+
+                    <h2 class="mt-3">
+
+                        15+
+
+                    </h2>
+
+                    <p>
+
+                        Years Experience
+
+                    </p>
+
+                </div>
 
             </div>
 
-            <div class="col-md-3">
+            <!-- Customers -->
 
-                <h1>10K+</h1>
+            <div class="col-lg-3 col-md-6">
 
-                <p>Customers</p>
+                <div class="stats-card">
+
+                    <i class="bi bi-people-fill display-4 text-warning"></i>
+
+                    <h2>
+
+                        10,000+
+
+                    </h2>
+
+                    <p>
+
+                        Happy Customers
+
+                    </p>
+
+                </div>
 
             </div>
 
-            <div class="col-md-3">
+            <!-- Brands -->
 
-                <h1>500+</h1>
+            <div class="col-lg-3 col-md-6">
 
-                <p>Products</p>
+                <div class="stats-card">
+
+                    <i class="bi bi-award-fill display-4 text-warning"></i>
+
+                    <h2>
+
+                        25+
+
+                    </h2>
+
+                    <p>
+
+                        Premium Brands
+
+                    </p>
+
+                </div>
 
             </div>
 
-            <div class="col-md-3">
+            <!-- Services -->
 
-                <h1>20+</h1>
+            <div class="col-lg-3 col-md-6">
 
-                <p>Brands</p>
+                <div class="stats-card">
+
+                    <i class="bi bi-tools display-4 text-warning"></i>
+
+                    <h2>
+
+                        20+
+
+                    </h2>
+
+                    <p>
+
+                        Car Care Services
+
+                    </p>
+
+                </div>
 
             </div>
 
@@ -629,127 +886,109 @@
 
 </section>
 
+<!-- ===================================================== -->
+<!--              BUSINESS STATISTICS END                  -->
+<!-- ===================================================== -->
+<!-- ===================================================== -->
+<!--             CUSTOMER TESTIMONIALS START               -->
+<!-- ===================================================== -->
 
-<!-- ===========================
-     Customer Testimonials
-=========================== -->
-
-<section class="testimonials py-5">
+<section class="py-5 bg-white">
 
     <div class="container">
 
         <div class="text-center mb-5">
 
             <span class="text-warning fw-bold">
-                TESTIMONIALS
+
+                CUSTOMER REVIEWS
+
             </span>
 
             <h2 class="display-5 fw-bold mt-2">
-                What Our Customers Say
-            </h2>
 
-            <p class="text-muted">
-                Customer satisfaction is our biggest achievement.
-            </p>
+                What Our Customers Say
+
+            </h2>
 
         </div>
 
         <div class="row g-4">
 
-            <!-- Testimonial 1 -->
-
             <div class="col-lg-4">
 
                 <div class="testimonial-card">
 
-                    <div class="stars">
+                    <div class="mb-3 text-warning">
 
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
+                        ★★★★★
 
                     </div>
 
                     <p>
 
-                        Excellent service and genuine tyre quality.
-                        Staff was professional and pricing was reasonable.
+                        Excellent service and genuine tyres.
+                        Highly recommended.
 
                     </p>
 
-                    <hr>
+                    <h5>
 
-                    <h5>Rahul Sharma</h5>
+                        Rahul Sharma
 
-                    <small>Delhi</small>
+                    </h5>
 
                 </div>
 
             </div>
 
-            <!-- Testimonial 2 -->
-
             <div class="col-lg-4">
 
                 <div class="testimonial-card">
 
-                    <div class="stars">
+                    <div class="mb-3 text-warning">
 
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
+                        ★★★★★
 
                     </div>
 
                     <p>
 
-                        Best wheel alignment service.
-                        My car feels much smoother after the service.
+                        Best wheel alignment service in the area.
 
                     </p>
 
-                    <hr>
+                    <h5>
 
-                    <h5>Amit Verma</h5>
+                        Amit Verma
 
-                    <small>Noida</small>
+                    </h5>
 
                 </div>
 
             </div>
 
-            <!-- Testimonial 3 -->
-
             <div class="col-lg-4">
 
                 <div class="testimonial-card">
 
-                    <div class="stars">
+                    <div class="mb-3 text-warning">
 
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
+                        ★★★★★
 
                     </div>
 
                     <p>
 
-                        Huge collection of tyres and accessories.
-                        Highly recommended for all car owners.
+                        Genuine products with reasonable prices.
 
                     </p>
 
-                    <hr>
+                    <h5>
 
-                    <h5>Priyanka Singh</h5>
+                        Neha Singh
 
-                    <small>Ghaziabad</small>
+                    </h5>
 
                 </div>
 
@@ -761,37 +1000,76 @@
 
 </section>
 
-<!-- ===========================
-     Contact & Call To Action
-=========================== -->
+<!-- ===================================================== -->
+<!--             CUSTOMER TESTIMONIALS END                 -->
+<!-- ===================================================== -->
 
-<section class="contact-section py-5">
+<!-- ===================================================== -->
+<!--             CONTACT & QUICK ENQUIRY START             -->
+<!-- ===================================================== -->
+
+<!--
+<section class="contact-home py-5 bg-light">
 
     <div class="container">
 
-        <div class="row align-items-center">
+        &lt;!&ndash; Section Heading &ndash;&gt;
 
-            <!-- Left Side -->
+        <div class="text-center mb-5">
 
-            <div class="col-lg-6 mb-4">
+            <span class="text-warning fw-bold">
 
-                <span class="text-warning fw-bold">
-                    CONTACT US
-                </span>
+                CONTACT US
 
-                <h2 class="display-5 fw-bold mt-2">
-                    Ready To Upgrade Your Vehicle?
-                </h2>
+            </span>
 
-                <p class="text-muted mt-3">
+            <h2 class="display-5 fw-bold mt-2">
 
-                    Whether you need premium tyres, wheel alignment,
-                    balancing, batteries or car accessories,
-                    our experts are ready to help you.
+                We'd Love To Hear From You
 
-                </p>
+            </h2>
 
-                <div class="contact-info mt-4">
+            <p class="text-muted">
+
+                Visit our shop or send us a quick enquiry.
+
+            </p>
+
+        </div>
+
+        <div class="row g-5">
+
+            &lt;!&ndash; ================================= &ndash;&gt;
+            &lt;!&ndash; Contact Information &ndash;&gt;
+            &lt;!&ndash; ================================= &ndash;&gt;
+
+            <div class="col-lg-5">
+
+                <div class="contact-card">
+
+                    <h3 class="mb-4">
+
+                        Gupta Tyre Shop
+
+                    </h3>
+
+                    <div class="contact-item">
+
+                        <i class="bi bi-geo-alt-fill"></i>
+
+                        <div>
+
+                            <strong>Address</strong>
+
+                            <p class="mb-0">
+
+                                Your Shop Address
+
+                            </p>
+
+                        </div>
+
+                    </div>
 
                     <div class="contact-item">
 
@@ -799,9 +1077,13 @@
 
                         <div>
 
-                            <h6>Call Us</h6>
+                            <strong>Phone</strong>
 
-                            <p>+91 XXXXX XXXXX</p>
+                            <p class="mb-0">
+
+                                +91-XXXXXXXXXX
+
+                            </p>
 
                         </div>
 
@@ -813,23 +1095,13 @@
 
                         <div>
 
-                            <h6>Email</h6>
+                            <strong>Email</strong>
 
-                            <p>info@guptatyreshop.com</p>
+                            <p class="mb-0">
 
-                        </div>
+                                info@guptatyreshop.com
 
-                    </div>
-
-                    <div class="contact-item">
-
-                        <i class="bi bi-geo-alt-fill"></i>
-
-                        <div>
-
-                            <h6>Location</h6>
-
-                            <p>Gupta Tyre Shop, Your City</p>
+                            </p>
 
                         </div>
 
@@ -841,9 +1113,13 @@
 
                         <div>
 
-                            <h6>Business Hours</h6>
+                            <strong>Working Hours</strong>
 
-                            <p>Mon - Sat : 9:00 AM - 8:00 PM</p>
+                            <p class="mb-0">
+
+                                Mon - Sun : 8:00 AM - 10:00 PM
+
+                            </p>
 
                         </div>
 
@@ -851,48 +1127,90 @@
 
                 </div>
 
-                <div class="mt-4">
-
-                    <a href="#" class="btn btn-warning me-3">
-
-                        <i class="bi bi-telephone-fill"></i>
-
-                        Call Now
-
-                    </a>
-
-                    <a href="#" class="btn btn-success">
-
-                        <i class="bi bi-whatsapp"></i>
-
-                        WhatsApp
-
-                    </a>
-
-                </div>
-
             </div>
 
-            <!-- Right Side -->
+            &lt;!&ndash; ================================= &ndash;&gt;
+            &lt;!&ndash; Quick Enquiry &ndash;&gt;
+            &lt;!&ndash; ================================= &ndash;&gt;
 
-            <div class="col-lg-6">
+            <div class="col-lg-7">
 
-                <div class="map-placeholder">
+                <div class="contact-card">
 
-                    <i class="bi bi-geo-alt display-1"></i>
+                    <form th:action="@{/contact}"
 
-                    <h4 class="mt-3">
+                          th:object="${contact}"
 
-                        Google Map
+                          method="post">
 
-                    </h4>
+                        <div class="row">
 
-                    <p>
+                            <div class="col-md-6 mb-3">
 
-                        Map will be added after
-                        client shares business location.
+                                <input
+                                        class="form-control"
+                                        placeholder="Full Name"
+                                        th:field="*{fullName}">
 
-                    </p>
+                            </div>
+
+
+                            <div class="col-md-6 mb-3">
+
+                                <input
+                                        class="form-control"
+                                        placeholder="Mobile Number"
+                                        th:field="*{mobile}">
+
+                            </div>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <input
+
+                                    class="form-control"
+
+                                    placeholder="Email"
+
+                                    th:field="*{email}">
+
+                        </div>
+                        <div class="mb-3">
+
+                            <input
+                                    class="form-control"
+                                    placeholder="Subject"
+                                    th:field="*{subject}">
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <textarea
+
+                                    class="form-control"
+
+                                    rows="5"
+
+                                    placeholder="Message"
+
+                                    th:field="*{message}">
+
+                            </textarea>
+
+                        </div>
+
+                        <button
+
+                                class="btn btn-warning btn-lg w-100">
+
+                            Send Enquiry
+
+                        </button>
+
+                    </form>
 
                 </div>
 
@@ -903,12 +1221,107 @@
     </div>
 
 </section>
+-->
+
+<!-- ===================================================== -->
+<!--              CONTACT CALL TO ACTION START             -->
+<!-- ===================================================== -->
+
+<section class="py-5 bg-warning">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-8">
+
+                <h2 class="fw-bold text-dark">
+
+                    Looking for the Best Tyres for Your Vehicle?
+
+                </h2>
+
+                <p class="lead text-dark mb-0">
+
+                    Visit Gupta Tyre Shop for genuine tyres, wheel alignment,
+                    balancing, batteries and complete car care services.
+
+                </p>
+
+            </div>
+
+            <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+
+                <a th:href="@{/contact}"
+                   class="btn btn-dark btn-lg me-2">
+
+                    <i class="bi bi-envelope-fill"></i>
+
+                    Contact Us
+
+                </a>
+
+                <a href="tel:+919999999999"
+                   class="btn btn-outline-dark btn-lg">
+
+                    <i class="bi bi-telephone-fill"></i>
+
+                    Call Now
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===================================================== -->
+<!--               CONTACT CALL TO ACTION END              -->
+<!-- ===================================================== -->
+<!-- ===================================================== -->
+<!--                 CONTACT END                           -->
+<!-- ===================================================== -->
+
+<!-- ===================================================== -->
+<!--                  GOOGLE MAP START                     -->
+<!-- ===================================================== -->
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="ratio ratio-21x9 shadow rounded overflow-hidden">
+
+            <iframe
+
+                    src="https://www.google.com/maps?q=Delhi&output=embed"
+
+                    loading="lazy"
+
+                    allowfullscreen>
+
+            </iframe>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===================================================== -->
+<!--                  GOOGLE MAP END                       -->
+<!-- ===================================================== -->
+
+
+<!-- Footer -->
 
 <div th:replace="~{fragments/footer :: footer}"></div>
 
-<script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js">
-</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
 
 </body>
 

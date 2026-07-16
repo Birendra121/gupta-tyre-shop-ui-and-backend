@@ -4,7 +4,9 @@
 <head>
 
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
 
   <title>Contact Us | Gupta Tyre Shop</title>
 
@@ -21,20 +23,32 @@
 
 <body>
 
+<!-- ===================================================== -->
+<!--                     NAVBAR                            -->
+<!-- ===================================================== -->
+
 <div th:replace="~{fragments/navbar :: navbar}"></div>
 
-<!-- Banner -->
+<!-- ===================================================== -->
+<!--                   PAGE BANNER                         -->
+<!-- ===================================================== -->
 
 <section class="page-banner">
 
   <div class="container text-center">
 
-    <h1>Contact Us</h1>
+    <h1>
+
+      Contact Us
+
+    </h1>
 
     <p>
 
-      We'd love to hear from you. Contact us for tyres,
-      accessories or professional car services.
+      We'd love to hear from you.
+      Contact us for tyres,
+      batteries,
+      accessories and professional car services.
 
     </p>
 
@@ -42,7 +56,9 @@
 
 </section>
 
-<!-- Contact -->
+<!-- ===================================================== -->
+<!--                  CONTACT SECTION                      -->
+<!-- ===================================================== -->
 
 <section class="py-5">
 
@@ -50,7 +66,9 @@
 
     <div class="row g-5">
 
-      <!-- Contact Form -->
+      <!-- ========================================= -->
+      <!--               CONTACT FORM                -->
+      <!-- ========================================= -->
 
       <div class="col-lg-7">
 
@@ -58,43 +76,71 @@
 
           <h2 class="fw-bold mb-4">
 
-            Send Us a Message
+            Send Us A Message
 
           </h2>
 
-          <form>
+          <!-- Success Message -->
 
-            <div class="row">
+          <div class="alert alert-success"
+               th:if="${success}"
+               th:text="${success}">
 
-              <div class="col-md-6 mb-3">
+          </div>
 
-                <label class="form-label">
+          <!-- Contact Form -->
 
-                  Full Name
+          <form th:action="@{/contact}"
+                th:object="${contact}"
+                method="post">
 
-                </label>
+            <!-- Full Name -->
 
-                <input type="text"
-                       class="form-control"
-                       placeholder="Enter your name">
+            <div class="mb-3">
 
-              </div>
+              <label class="form-label">
 
-              <div class="col-md-6 mb-3">
+                Full Name
 
-                <label class="form-label">
+              </label>
 
-                  Mobile Number
+              <input type="text"
+                     class="form-control"
+                     th:field="*{fullName}"
+                     placeholder="Enter your full name">
 
-                </label>
-
-                <input type="text"
-                       class="form-control"
-                       placeholder="Enter mobile number">
+              <div class="text-danger mt-1"
+                   th:if="${#fields.hasErrors('fullName')}"
+                   th:errors="*{fullName}">
 
               </div>
 
             </div>
+
+            <!-- Mobile -->
+
+            <div class="mb-3">
+
+              <label class="form-label">
+
+                Mobile Number
+
+              </label>
+
+              <input type="text"
+                     class="form-control"
+                     th:field="*{mobile}"
+                     placeholder="Enter mobile number">
+
+              <div class="text-danger mt-1"
+                   th:if="${#fields.hasErrors('mobile')}"
+                   th:errors="*{mobile}">
+
+              </div>
+
+            </div>
+
+            <!-- Email -->
 
             <div class="mb-3">
 
@@ -106,9 +152,18 @@
 
               <input type="email"
                      class="form-control"
-                     placeholder="Enter email">
+                     th:field="*{email}"
+                     placeholder="Enter your email">
+
+              <div class="text-danger mt-1"
+                   th:if="${#fields.hasErrors('email')}"
+                   th:errors="*{email}">
+
+              </div>
 
             </div>
+
+            <!-- Subject -->
 
             <div class="mb-3">
 
@@ -120,9 +175,18 @@
 
               <input type="text"
                      class="form-control"
+                     th:field="*{subject}"
                      placeholder="Enter subject">
 
+              <div class="text-danger mt-1"
+                   th:if="${#fields.hasErrors('subject')}"
+                   th:errors="*{subject}">
+
+              </div>
+
             </div>
+
+            <!-- Message -->
 
             <div class="mb-4">
 
@@ -132,13 +196,28 @@
 
               </label>
 
-              <textarea class="form-control"
-                        rows="6"
-                        placeholder="Write your message"></textarea>
+              <textarea
+                      class="form-control"
+                      rows="6"
+                      th:field="*{message}"
+                      placeholder="Write your message">
+
+                            </textarea>
+
+              <div class="text-danger mt-1"
+                   th:if="${#fields.hasErrors('message')}"
+                   th:errors="*{message}">
+
+              </div>
 
             </div>
 
-            <button class="btn btn-warning btn-lg">
+            <!-- Submit -->
+
+            <button type="submit"
+                    class="btn btn-warning btn-lg w-100">
+
+              <i class="bi bi-send-fill"></i>
 
               Send Message
 
@@ -149,77 +228,155 @@
         </div>
 
       </div>
-
-      <!-- Contact Details -->
+      <!-- ========================================= -->
+      <!--            CONTACT DETAILS                -->
+      <!-- ========================================= -->
 
       <div class="col-lg-5">
 
         <div class="contact-details-card">
 
-          <h3 class="fw-bold mb-4">
+          <h2 class="fw-bold mb-4">
 
             Gupta Tyre Shop
 
-          </h3>
+          </h2>
+
+          <p class="text-muted mb-4">
+
+            We are committed to providing genuine tyres,
+            professional wheel care and complete automobile
+            services with quality workmanship.
+
+          </p>
+
+          <!-- Phone -->
 
           <div class="contact-detail">
 
-            <i class="bi bi-telephone-fill"></i>
+            <div class="contact-icon">
+
+              <i class="bi bi-telephone-fill"></i>
+
+            </div>
 
             <div>
 
-              <strong>Phone</strong>
+              <h6 class="mb-1">
 
-              <p>+91 XXXXX XXXXX</p>
+                Phone
+
+              </h6>
+
+              <p class="mb-0">
+
+                +91 XXXXXXXXXX
+
+              </p>
 
             </div>
 
           </div>
 
+          <!-- Email -->
+
           <div class="contact-detail">
 
-            <i class="bi bi-envelope-fill"></i>
+            <div class="contact-icon">
+
+              <i class="bi bi-envelope-fill"></i>
+
+            </div>
 
             <div>
 
-              <strong>Email</strong>
+              <h6 class="mb-1">
 
-              <p>info@guptatyreshop.com</p>
+                Email
+
+              </h6>
+
+              <p class="mb-0">
+
+                y121birendra@gmail.com
+
+              </p>
 
             </div>
 
           </div>
 
+          <!-- Address -->
+
           <div class="contact-detail">
 
-            <i class="bi bi-geo-alt-fill"></i>
+            <div class="contact-icon">
+
+              <i class="bi bi-geo-alt-fill"></i>
+
+            </div>
 
             <div>
 
-              <strong>Address</strong>
+              <h6 class="mb-1">
 
-              <p>Your Shop Address</p>
+                Address
+
+              </h6>
+
+              <p class="mb-0">
+
+                Gupta Tyre Shop
+
+                <br>
+
+                Your Shop Address
+
+              </p>
 
             </div>
 
           </div>
 
+          <!-- Working Hours -->
+
           <div class="contact-detail">
 
-            <i class="bi bi-clock-fill"></i>
+            <div class="contact-icon">
+
+              <i class="bi bi-clock-fill"></i>
+
+            </div>
 
             <div>
 
-              <strong>Business Hours</strong>
+              <h6 class="mb-1">
 
-              <p>Mon - Sat : 9 AM - 8 PM</p>
+                Working Hours
+
+              </h6>
+
+              <p class="mb-0">
+
+                Monday - Sunday
+
+                <br>
+
+                8:00 AM - 10:00 PM
+
+              </p>
 
             </div>
 
           </div>
 
-          <a href="#"
-             class="btn btn-success w-100 mt-4">
+          <!-- WhatsApp -->
+
+          <a href="https://wa.me/91XXXXXXXXXX"
+
+             target="_blank"
+
+             class="btn btn-success btn-lg w-100 mt-4">
 
             <i class="bi bi-whatsapp"></i>
 
@@ -237,34 +394,53 @@
 
 </section>
 
-<!-- Google Map -->
+<!-- ===================================================== -->
+<!--                  GOOGLE MAP                           -->
+<!-- ===================================================== -->
 
 <section class="pb-5">
 
   <div class="container">
 
-    <div class="map-box">
+    <div class="text-center mb-4">
 
-      <i class="bi bi-geo-alt display-1"></i>
+      <h2 class="fw-bold">
 
-      <h3 class="mt-3">
+        Find Us On Google Map
 
-        Google Map
+      </h2>
 
-      </h3>
+      <p class="text-muted">
 
-      <p>
-
-        Google Map will be integrated after
-        receiving the business location.
+        Visit our shop for premium tyres and complete car care services.
 
       </p>
+
+    </div>
+
+    <div class="ratio ratio-21x9 rounded shadow overflow-hidden">
+
+      <!-- Replace the URL below with your shop location -->
+
+      <iframe
+
+              src="https://www.google.com/maps?q=Delhi&output=embed"
+
+              loading="lazy"
+
+              allowfullscreen>
+
+      </iframe>
 
     </div>
 
   </div>
 
 </section>
+
+<!-- ===================================================== -->
+<!--                     FOOTER                            -->
+<!-- ===================================================== -->
 
 <div th:replace="~{fragments/footer :: footer}"></div>
 
